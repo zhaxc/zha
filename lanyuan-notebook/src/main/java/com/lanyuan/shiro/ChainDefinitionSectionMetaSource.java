@@ -13,6 +13,8 @@ import com.lanyuan.mapper.ResourcesMapper;
 import com.lanyuan.util.ConfigUtils;
 
 /**
+ * 
+ * 自定义filterChainDefinitionMap
  * 产生责任链，确定每个url的访问权限
  * 
  */
@@ -21,11 +23,16 @@ public class ChainDefinitionSectionMetaSource implements FactoryBean<Ini.Section
 	@Inject
 	private ResourcesMapper resourcesMapper;
 
-	// 静态资源访问权限
+	// 静态资源访问权限 (配置文件注入)
 	private String filterChainDefinitions = null;
-
+	
+	/**
+	 * FactoryBean<T>接口的Bean，根据该Bean的Id从BeanFactory中获取的实际上是FactoryBean的getObject()返回的对象，而不是FactoryBean本身
+	 */
 	public Ini.Section getObject() throws Exception {
+		//初始化数据库表字段到缓存
 		new ConfigUtils().initTableField(); 
+		
 		Ini ini = new Ini();
 		// 加载默认的url
 		ini.load(filterChainDefinitions);
@@ -51,6 +58,20 @@ public class ChainDefinitionSectionMetaSource implements FactoryBean<Ini.Section
 	}
 
 	/**
+	 * 工厂生产对象类型
+	 */
+	public Class<?> getObjectType() {
+		return this.getClass();
+	}
+	
+	/**
+	 * 指定是否单例
+	 */
+	public boolean isSingleton() {
+		return false;
+	}
+	
+	/**
 	 * 通过filterChainDefinitions对默认的url过滤定义
 	 * 
 	 * @param filterChainDefinitions
@@ -58,13 +79,5 @@ public class ChainDefinitionSectionMetaSource implements FactoryBean<Ini.Section
 	 */
 	public void setFilterChainDefinitions(String filterChainDefinitions) {
 		this.filterChainDefinitions = filterChainDefinitions;
-	}
-
-	public Class<?> getObjectType() {
-		return this.getClass();
-	}
-
-	public boolean isSingleton() {
-		return false;
 	}
 }

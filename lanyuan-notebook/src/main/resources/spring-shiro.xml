@@ -9,8 +9,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
 	default-lazy-init="true">
 	
-	<bean id="credentialsMatcher"
-		class="com.lanyuan.shiro.credentials.RetryLimitHashedCredentialsMatcher">
+	<bean id="credentialsMatcher" class="com.lanyuan.shiro.credentials.RetryLimitHashedCredentialsMatcher">
 		<!-- hashAlgorithmName必须的，没有默认值。可以有MD5或者SHA-1，如果对密码安全有更高要求可以用SHA-256或者更高。
 		这里使用MD5 storedCredentialsHexEncoded默认是true，此时用的是密码加密用的是Hex编码；false时用Base64编码 
 		hashIterations迭代次数，默认值是1。 -->
@@ -37,10 +36,10 @@
         <!--<property name="authorizationCacheName" value="authorizationCache"/>-->
 	</bean>
 	
-     <bean id="sysUserFilter" class="com.lanyuan.shiro.filter.SysUserFilter"/>
+    <bean id="sysUserFilter" class="com.lanyuan.shiro.filter.SysUserFilter"/>
     
     
-	 <bean id="kickoutSessionControlFilter" class="com.lanyuan.shiro.filter.KickoutSessionControlFilter">
+	<bean id="kickoutSessionControlFilter" class="com.lanyuan.shiro.filter.KickoutSessionControlFilter">
         <property name="cacheManager" ref="cacheManager"/>
         <property name="sessionManager" ref="sessionManager"/>
 
@@ -53,8 +52,11 @@
 	<!-- 配置shiro的过滤器工厂类，id- shiroFilter要和我们在web.xml中配置的过滤器一致 -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
+		<!-- 登录页面地址 -->
 		<property name="loginUrl" value="/login.shtml" />
+		<!-- 登录成功页面地址(如果首先访问受保护 URL 登录成功，则跳转到实际访问页面) -->
 		<property name="successUrl" value="/index.shtml" />
+		<!-- 认证未通过访问的页面(未经授权页面) -->
 		<property name="unauthorizedUrl" value="/denied.jsp" />
 		<!-- 自定义权限配置 -->
 		<property name="filterChainDefinitionMap" ref="chainDefinitionSectionMetaSource" />
@@ -113,7 +115,7 @@
 	
 	<!--shiro缓存管理器 -->
 	<bean id="cacheManager" class="com.lanyuan.shiro.spring.SpringCacheManagerWrapper" >
-	<property name="cacheManager" ref="springCacheManager"/>
+		<property name="cacheManager" ref="springCacheManager"/>
 	</bean>
 	
 	 <bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">

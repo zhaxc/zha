@@ -20,30 +20,16 @@ public interface BaseMapper {
 	 * 5：formMap.put("name","xxx") 或 formMap.put("name","xxx,xxx,xxx") <br/>
 	 * 6：兼容模糊查询。 formMap.put("name","用户%") 或 formMap.put("name","%用户%") <br/>
 	 * 7：兼容排序查询 : formMap.put("$orderby","order by id desc");  
-	 * <b>author：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplanyuan</b><br/>
-	 * <b>date：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2015-04-26</b><br/>
-	 * <b>version：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3.0v</b>
-	 * 
 	 * @return <T> List<T>
 	 */
 	public <T> List<T> findByPage(T formMap);
 
 	/**
-	 * 
-	 * 1：自定义where查询条件，传入继承FormMap的子类对象,返回是一个List<T>集合<br/>
-	 * 2：返回查询条件数据,如不传入.则返回所有数据..如果附加条件.如下 <br/>
-	 * 3：formMap.put('where","id=XX and name= XX order by XX") <br/>
-	 * <b>author：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplanyuan</b><br/>
-	 * <b>date：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2015-04-26</b><br/>
-	 * <b>version：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3.0v</b>
-	 * 
-	 * @return <T> List<T>
+	 * 1：自定义where查询条件，传入继承FormMap的子类对象,返回是一个List<T>集合
+	 * 2：返回查询条件数据,如不传入.则返回所有数据..如果附加条件.如下 
+	 * 3：formMap.put('where","id=XX and name= XX order by XX") 
+	 * @param formMap
+	 * @return
 	 */
 	public <T> List<T> findByWhere(T formMap);
 
