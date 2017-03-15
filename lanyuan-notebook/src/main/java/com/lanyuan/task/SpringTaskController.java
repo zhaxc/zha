@@ -27,6 +27,7 @@ import com.lanyuan.util.SystemInfo;
 @Component
 @Lazy(false)
 public class SpringTaskController {
+	
 	@Inject
 	private ServerInfoMapper serverInfoMapper;
 
@@ -35,21 +36,24 @@ public class SpringTaskController {
 		try {
 			action.task();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 	/**
-	 * 与用户设置的使用率比较 spirng 调度
-	 * 
+	 * 与用户设置的使用率比较 spirng 调度 
+	 * 监控服务器CPU RAM JVM 使用情况，与 config.properties根据设定的值比较超出则发送邮件报警 
 	 * @throws Exception
 	 */
-	@Scheduled(cron = "1 * *  * * ? ")
+	@Scheduled(cron = "1 * *  * * ? ")//每分钟的第一秒执行一次
 	public void task() throws Exception {
+		//获取系统使用率（Sigar）		
 		ServerInfoFormMap usage = SystemInfo.usage(new Sigar());
 		String cpuUsage = usage.get("cpuUsage")+"";// CPU使用率
 		String serverUsage = usage.get("ramUsage")+"";// 系统内存使用率
 		String JvmUsage = usage.get("jvmUsage")+"";// 计算ＪＶＭ内存使用率
+		
+		//读取配置文件获得设定使用率
 		Properties prop = PropertiesUtils.getProperties();
 		String cpu = prop.getProperty("cpu");
 		String jvm = prop.getProperty("jvm");
@@ -59,7 +63,7 @@ public class SpringTaskController {
 		String cpubool = "";
 		String jvmbool = "";
 		String rambool = "";
-		String mark = "<font color='red'>";
+		String mark = "<font color='red'>";//提示信息
 		if (Double.parseDouble(cpuUsage) > Double.parseDouble(cpu)) {
 			cpubool = "style=\"color: red;font-weight: 600;\"";
 			mark += "CPU当前：" + cpuUsage + "%,超出预设值  " + cpu + "%<br>";
@@ -73,8 +77,8 @@ public class SpringTaskController {
 			mark += "内存当前：" + serverUsage + "%,超出预设值  " + ram + "%";
 		}
 		mark += "</font>";
+		
 		// 邮件内容
-
 		String title = "服务器预警提示 - "+Common.fromDateH();
 		String centent = "当前时间是：" + Common.fromDateH() + "<br/><br/>" + "<style type=\"text/css\">" + ".common-table{" + "-moz-user-select: none;" + "width:100%;" + "border:0;" + "table-layout : fixed;" + "border-top:1px solid #dedfe1;" + "border-right:1px solid #dedfe1;" + "}" +
 
@@ -89,8 +93,9 @@ public class SpringTaskController {
 		mark = mark.replaceAll("'","\"");
 		if (!Common.isEmpty(cpubool) || !Common.isEmpty(jvmbool) || !Common.isEmpty(rambool)) {
 			try {
+				//发送邮件
 				EmailUtils.sendMail(prop.getProperty("fromEmail"), email, prop.getProperty("emailName"), prop.getProperty("emailPassword"), title, centent);
-				// 保存预警信息
+				//保存预警信息
 				usage.put("setCpuUsage", cpu);
 				usage.put("setJvmUsage", jvm);
 				usage.put("setRamUsage", ram);
@@ -99,6 +104,7 @@ public class SpringTaskController {
 				serverInfoMapper.addEntity(usage);
 				System.err.println("发送邮件！");
 			} catch (Exception e) {
+//				e.printStackTrace();
 				System.err.println("发送邮件失败！");
 			}
 		}

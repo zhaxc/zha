@@ -110,13 +110,7 @@ public interface BaseMapper {
 	/**
 	 * 1：传入继承FormMap的子类对象 <br/>
 	 * 2：保存数据,保存数据后返回子类对象的所有数据包括id..主建统一返回为id <br/>
-	 * <b>author：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplanyuan</b><br/>
-	 * <b>date：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2015-04-26</b><br/>
-	 * <b>version：</b><br/>
-	 * <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3.0v</b>
-	 * 
+	 * @param formMap
 	 * @throws Exception
 	 */
 	public void addEntity(Object formMap) throws Exception;
