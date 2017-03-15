@@ -84,6 +84,12 @@ public class SystemInfo {
 		}
 		return monitorMap;
 	}
+	
+	/**
+	 * 获得cpu jvm ram 使用率
+	 * @param sigar
+	 * @return
+	 */
 	public static ServerInfoFormMap usage(Sigar sigar) {
 		ServerInfoFormMap monitorMap = new ServerInfoFormMap();
 		try {
@@ -164,5 +170,8 @@ public class SystemInfo {
 		}
 		return monitorMaps;
 	}
-
+	
+	public static void main(String[] args) {
+		System.out.println(System.getProperty("java.library.path"));
+	}
 }
