@@ -57,7 +57,7 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<!--Apache Shiro所需的jar包 -->
- <dependency>
+ 		<dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
             <version>${shiro.version}</version>
