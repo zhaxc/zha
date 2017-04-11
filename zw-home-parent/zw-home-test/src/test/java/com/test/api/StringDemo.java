@@ -45,4 +45,9 @@ public class StringDemo {
         String y = string.substring(end);
         return y + x;
     }
+
+    @Test
+    public void testBubble() {
+
+    }
 }
