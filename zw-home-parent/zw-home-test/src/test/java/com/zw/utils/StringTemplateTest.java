@@ -20,6 +20,7 @@ public class StringTemplateTest extends BaseTestCase {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
+    
     /**
      * 用于统计点击量，访问量
      */
