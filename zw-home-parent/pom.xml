@@ -15,7 +15,7 @@
 		<junit.version>4.10</junit.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<logback.version>1.0.13</logback.version>
-		<spring.version>4.0.2.RELEASE</spring.version>
+		<spring.version>4.2.5.RELEASE</spring.version>
 		<shiro.version>1.2.2</shiro.version>
 		<jackson.version>2.2.2</jackson.version>
 		<mybatis.version>3.2.8</mybatis.version>
@@ -24,6 +24,12 @@
 		<mybatis.spring.version>1.2.2</mybatis.spring.version>
 		<zxing.version>3.0.0</zxing.version>
 		<jersey.version>1.18.3</jersey.version>
+	  	<redis.client.version>2.7.3</redis.client.version>
+	  	<mongodb.version>2.14.3</mongodb.version>
+	  	<spring.mongodb.version>1.5.4.RELEASE</spring.mongodb.version>
+	  	<spring.data.version>1.7.1.RELEASE</spring.data.version>
+	  	<dubbo.version>2.5.3</dubbo.version>
+	  	<zkclient.version>0.1</zkclient.version>
 	</properties>
 
 
@@ -277,6 +283,59 @@
 				<groupId>com.google.zxing</groupId>
 				<artifactId>javase</artifactId>
 				<version>${zxing.version}</version>
+			</dependency>
+
+			<!-- spring redis 扩展 -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>${spring.data.version}</version>
+			</dependency>
+
+			<!-- redis client -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${redis.client.version}</version>
+			</dependency>
+
+			<!-- dubbo -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>${dubbo.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- zookeeper client -->
+			<dependency>
+				<groupId>com.github.sgroschupf</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>${zkclient.version}</version>
+			</dependency>
+
+			<!-- mongo -->
+			<dependency>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongo-java-driver</artifactId>
+				<version>${mongodb.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>slf4j-api</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>${spring.mongodb.version}</version>
 			</dependency>
 																							
 		</dependencies>

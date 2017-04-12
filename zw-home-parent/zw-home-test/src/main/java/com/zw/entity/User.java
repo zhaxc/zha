@@ -1,5 +1,7 @@
 package com.zw.entity;
 
+import java.io.Serializable;
+
 /**
  * \* Created with IntelliJ IDEA.
  * \* User: zhaxc
@@ -9,7 +11,7 @@ package com.zw.entity;
  * \* Description:
  * \
  */
-public class User {
+public class User implements Serializable{
 
     private Integer id;
     private String name;
