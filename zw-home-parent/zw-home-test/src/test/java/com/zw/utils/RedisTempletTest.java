@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.util.*;
@@ -34,13 +36,18 @@ public class RedisTempletTest extends BaseTestCase {
 
     @Before
     public void init() {
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+//        泛型的object --》 Json 序列化
+//        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+//        指定类型的 object --》 Json 序列化
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<User>(User.class));
         operations = redisTemplate.opsForValue();
     }
 
     @Test
     public void set1() {
 
-        operations.set("user2", new User(2,"zha","15172339107"));
+        operations.set("user3", new User(3,"zha","15172339107"));
     }
 
     @Test
@@ -74,14 +81,14 @@ public class RedisTempletTest extends BaseTestCase {
 
     @Test
     public void get() {
-//        User user2 = operations.get("user3");
-//        TestUtil.printJson(user2);
-        Collection<String> keys = new ArrayList<>();
-        keys.add("user1");
-        keys.add("user6");
-        keys.add("user9");
-        List<User> users = operations.multiGet(keys);
-        TestUtil.printJson(users);
+        User user2 = operations.get("user2");
+        TestUtil.printJson(user2);
+//        Collection<String> keys = new ArrayList<>();
+//        keys.add("user1");
+//        keys.add("user6");
+//        keys.add("user9");
+//        List<User> users = operations.multiGet(keys);
+//        TestUtil.printJson(users);
     }
 
 

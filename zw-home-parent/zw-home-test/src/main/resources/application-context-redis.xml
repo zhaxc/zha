@@ -23,11 +23,16 @@
 	<!--ERR value is not an integer or out of range-->
 	<!--如果没有显示指定Key或Value的序列化器，默认采用JdkSerializationRedisSerializer。StringRedisSerializer将数据存储为正常的字符串，而JdkSerializationRedisSerializer则是将数据存储为一串序列字符串，还需通过反序列化才能得到正常的字符串。-->
 	<bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+	<bean id="genericJackson2JsonRedisSerializer" class="org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer"/>
+
 
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
 		<property name="connectionFactory" ref="connectionFactory" />
-		<property name="keySerializer" ref="stringRedisSerializer"/>
-		<property name="valueSerializer" ref="stringRedisSerializer"/>
+		<!--<property name="keySerializer" ref="stringRedisSerializer"/>
+		<property name="valueSerializer" ref="stringRedisSerializer"/>-->
 	</bean>
+
+	<!--RedisTemplate<String, String>-->
+	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"/>
 
 </beans>
