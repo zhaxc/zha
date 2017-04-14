@@ -33,6 +33,8 @@
 	</bean>
 
 	<!--RedisTemplate<String, String>-->
-	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"/>
+	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
 
 </beans>
