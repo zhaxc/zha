@@ -1,5 +1,7 @@
 package com.zw.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 
 /**
@@ -11,6 +13,7 @@ import java.io.Serializable;
  * \* Description:
  * \
  */
+@Document
 public class User implements Serializable{
 
     private Integer id;
