@@ -31,7 +31,7 @@ public class MongoBaseImpl<T> implements MongoBase<T> {
     }
 
     @Override
-    public <T> T findOne(Map<String, Object> params, String collectionName,Class<T> clazz) {
+    public T findOne(Map<String, Object> params, String collectionName,Class<T> clazz) {
 
         CriteriaDefinition criteria = new Criteria();
         Set<Map.Entry<String, Object>> entries = params.entrySet();

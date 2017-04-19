@@ -15,7 +15,7 @@ public interface MongoBase<T> {
     //添加
     public void insert(T object,String collectionName);
     //根据条件查找
-    public <T> T findOne(Map<String,Object> params,String collectionName,Class<T> clazz);
+    public T findOne(Map<String,Object> params,String collectionName,Class<T> clazz);
     //查找所有
     public List<T> findAll(Map<String,Object> params,String collectionName);
     //修改
