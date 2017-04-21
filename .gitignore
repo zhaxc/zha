@@ -12,3 +12,5 @@ zw-home-parent/.idea/
 txjh/txjh.iml
 *.iml
 zw-home-parent/zw-dao/.settings/
+zw-home-parent/zw-activemq-service/.settings/
+zw-home-parent/zw-activemq-client/.settings/
