@@ -24,6 +24,7 @@ public class TopicSender {
 	@Qualifier("jmsTopicTemplate")
 	private JmsTemplate jmsTemplate;
 	
+	
 	/**
 	 * 发送一条消息到指定的队列（目标）
 	 * @param queueName 队列名称
