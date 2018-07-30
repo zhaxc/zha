@@ -4,8 +4,6 @@ import com.base.BaseTestCase;
 import com.zw.entity.User;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by IDEA
  * description ：
@@ -17,8 +15,8 @@ public class SpringRedisUtilTest extends BaseTestCase {
 
     @Test
     public void testSave() throws Exception {
-        User user = new User(1,"ss","1111111111");
-        SpringRedisUtil.save("user", user);
+//        User user = new User(1,"ss","1111111111");
+//        SpringRedisUtil.save("user", user);
     }
 
     @Test

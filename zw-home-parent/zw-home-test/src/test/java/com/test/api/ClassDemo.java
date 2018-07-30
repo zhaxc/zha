@@ -63,7 +63,7 @@ public class ClassDemo {
     public void newInstance() {
         try {
             User user = User.class.newInstance();
-            user.setId(1);
+//            user.setId(1);
             TestUtil.printJson(user);
         } catch (InstantiationException e) {
             e.printStackTrace();

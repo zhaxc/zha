@@ -70,7 +70,19 @@
         </table> -->
 		
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-		<table tableName="t_user" domainObjectName="User" ></table>
-		
+		<!--<table tableName="t_coi_vehicle_compare" domainObjectName="tCoiVehicleCompare" ></table>-->
+		<!--<table tableName="t_coi_compare_field" domainObjectName="tCoiCompareField" ></table>-->
+		<!--<table tableName="t_ops_warn_out_scope" domainObjectName="warnOutScope" ></table>-->
+		<!--<table tableName="t_ops_map_district" domainObjectName="MapDistrict" ></table>-->
+		<!--<table tableName="t_ops_map_polygon" domainObjectName="MapPolygon" ></table>-->
+		<!--<table tableName="t_ops_warn_out_scope" domainObjectName="warnOutScope" ></table>-->
+		<!--<table tableName="t_ops_job_schema" domainObjectName="JobSchema" ></table>-->
+		<!--<table tableName="operate_pay" domainObjectName="operatePay" ></table>-->
+		<!--<table tableName="t_adl_person_material" domainObjectName="PersonMaterial" ></table>-->
+		<!--<table tableName="t_stm_driver_attachment" domainObjectName="DriverAttachment" ></table>-->
+		<!--<table tableName="t_stm_driver_history" domainObjectName="DriverHistory" ></table>-->
+		<!--<table tableName="t_stm_other_driver_history" domainObjectName="OtherDriverHistory" ></table>-->
+		<table tableName="t_stm_other_driver" domainObjectName="OtherDriver" ></table>
+
 	</context>
 </generatorConfiguration>

@@ -1,11 +1,8 @@
 package com.zw.mongo;
 
 import com.base.BaseTestCase;
-import com.zw.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-
-import java.util.Collection;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -24,6 +21,8 @@ public class MongoTempleTest extends BaseTestCase{
     public void insert() {
 //        Collection<? extends Object> user = new User();
 //        mongoTemple.insert(user,"users");
+
+
     }
 
 }

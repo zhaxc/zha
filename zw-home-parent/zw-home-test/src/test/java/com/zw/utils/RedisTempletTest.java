@@ -1,7 +1,6 @@
 package com.zw.utils;
 
 import com.base.BaseTestCase;
-import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import com.zw.entity.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,12 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -47,7 +45,7 @@ public class RedisTempletTest extends BaseTestCase {
     @Test
     public void set1() {
 
-        operations.set("user3", new User(3,"zha","15172339107"));
+//        operations.set("user3", new User(3,"zha","15172339107"));
     }
 
     @Test
@@ -55,7 +53,7 @@ public class RedisTempletTest extends BaseTestCase {
         /**
          * 指定过期时间
          */
-        operations.set("user3", new User(3, "asdfsfd", "15172339107"),15, TimeUnit.SECONDS);
+//        operations.set("user3", new User(3, "asdfsfd", "15172339107"),15, TimeUnit.SECONDS);
     }
 
     @Test
@@ -64,15 +62,15 @@ public class RedisTempletTest extends BaseTestCase {
          * key 不存在时保存成功 返回true
          * key 存在时保存失败 返回false
          */
-        Boolean aBoolean = operations.setIfAbsent("user3", new User(4, "胖子", "15172339107"));
-        System.out.println("aBoolean = " + aBoolean);
+//        Boolean aBoolean = operations.setIfAbsent("user3", new User(4, "胖子", "15172339107"));
+//        System.out.println("aBoolean = " + aBoolean);
     }
 
     @Test
     public void set4() {
         Map<String, User> map = new HashMap<>();
-        map.put("user7",new User(4, "dsfdsfsfd", "15172339107"));
-        map.put("user6",new User(6, "dsfdssfdsafds", "15172339107"));
+//        map.put("user7",new User(4, "dsfdsfsfd", "15172339107"));
+//        map.put("user6",new User(6, "dsfdssfdsafds", "15172339107"));
         operations.multiSet(map);
         //都不存在时保存成功
         //Boolean aBoolean = operations.multiSetIfAbsent(map);

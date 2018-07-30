@@ -12,4 +12,7 @@
 		<result column="price" property="price" />
 	</resultMap>
 
+	<select id="selectByForm" resultType="map">
+		select * from t_user;
+	</select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.zw.mapper;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.zw.entity.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class UserMapperTest extends BaseTest{
         user.setName("王妮");
         user.setAge(18);
         this.userMapper.insert(user);
+        Integer id = user.getId();
+        System.out.println("id = " + id);
+
     }
 
 	@Test
@@ -51,7 +55,9 @@ public class UserMapperTest extends BaseTest{
 	public void testDelete() {
 		EntityWrapper<User> ew = new EntityWrapper<User>();
 		ew.setEntity(new User());
-		ew.where("name = {0} and age = {1}", "查", 18);
+		ew.where("1 = 1");
+		ew.or("name = {0}", "ss");
+		ew.or("name = {0}", "dd");
 		this.userMapper.delete(ew);
 	}
 
@@ -105,12 +111,17 @@ public class UserMapperTest extends BaseTest{
 
 	@Test
 	public void testSelectList() {
-		fail("Not yet implemented");
+		Wrapper<User> warrp = new EntityWrapper<>();
+		warrp.where("1 = 1");
+		warrp.and("name like {0}", "ss");
+		List<User> users = this.userMapper.selectList(warrp);
+		System.out.println(users.size());
 	}
 
 	@Test
 	public void testSelectMaps() {
-		fail("Not yet implemented");
+		List<Map<String, Object>> maps = this.userMapper.selectByForm();
+		System.out.println(maps.size());
 	}
 
 	@Test

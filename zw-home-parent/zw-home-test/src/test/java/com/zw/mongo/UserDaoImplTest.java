@@ -1,16 +1,6 @@
 package com.zw.mongo;
 
 import com.base.BaseTestCase;
-import com.zw.entity.User;
-import com.zw.utils.TestUtil;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by IDEA
@@ -21,43 +11,72 @@ import static org.junit.Assert.*;
  */
 public class UserDaoImplTest extends BaseTestCase {
 
-    @Autowired
-    UserDaoImpl userDaoImpl;
-
-    @Test
-    public void testInsert() throws Exception {
-        userDaoImpl.insert(new User(1, "查", "15172339107"),"zw");
-    }
-
-    @Test
-    public void testFindOne() throws Exception {
-        HashMap<String, Object> params = new HashMap<>();
-       /* params.put("id", 1);
-        params.put("name","查");*/
-        User zw = userDaoImpl.findOne(params, "zw", User.class);
-        TestUtil.printJson(zw);
-    }
-
-    @Test
-    public void testFindAll() throws Exception {
-        Map<String, Object> param = new HashMap<>();
-        List<User> zw = userDaoImpl.findAll(param, "zw");
-        TestUtil.printJson(zw);
-    }
-
-    @Test
-    public void testUpdate() throws Exception {
-        Map<String,Object> param = new HashMap<>();
-        userDaoImpl.update(param,"zw");
-    }
-
-    @Test
-    public void testCreateCollection() throws Exception {
-        userDaoImpl.createCollection("zw");
-    }
-
-    @Test
-    public void testRemove() throws Exception {
-
-    }
+//    @Autowired
+//    UserDaoImpl userDaoImpl;
+//
+//    @Test
+//    public void testInsert() throws Exception {
+//        userDaoImpl.insert(new User("user4", "查", "15172339107"));
+//    }
+//
+//    @Test
+//    public void testSave() {
+//        userDaoImpl.save(new User("user3", "xc", "13716540060"));
+//    }
+//
+//    @Test
+//    public void testFindOne() throws Exception {
+//        HashMap<String, Object> params = new HashMap<>();
+////        params.put("id", 1);
+//        params.put("name","查");
+//        params.put("phone", "15172339107");
+//        User zw = userDaoImpl.findOne(params);
+//        TestUtil.printJson(zw);
+//    }
+//
+//    @Test
+//    public void testFindAll() throws Exception {
+//        Map<String, Object> param = new HashMap<>();
+//        List<User> zw = userDaoImpl.findAll();
+//        TestUtil.printJson(zw);
+//    }
+//
+//    @Test
+//    public void testUpdate() throws Exception {
+//        Map<String,Object> param = new HashMap<>();
+//        userDaoImpl.update(param,"zw");
+//    }
+//
+//    @Test
+//    public void testCreateCollection() throws Exception {
+//        userDaoImpl.createCollection("zw");
+//    }
+//
+//    @Test
+//    public void testRemove() throws Exception {
+//
+//    }
+//
+//
+//
+//    @Test
+//    public void testFind() {
+//        HashMap<String, Object> params = new HashMap<>();
+////        params.put("id", 1);
+//        params.put("name","查");
+//        params.put("phone","13716540060");
+//        List<User> zw = userDaoImpl.find(params);
+//        TestUtil.printJson(zw);
+//    }
+//
+//    @Test
+//    public void testFindByCondition() {
+//
+//        User params = new User();
+////        params.setUserId("user2");
+//        params.setName("cha");
+//        params.setPhone("137");
+//        List<User> zw = userDaoImpl.findByCondition(params);
+//        TestUtil.printJson(zw);
+//    }
 }

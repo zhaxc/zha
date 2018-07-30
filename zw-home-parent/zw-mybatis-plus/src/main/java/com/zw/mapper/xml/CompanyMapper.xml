@@ -9,4 +9,5 @@
 		<result column="address" property="address" />
 	</resultMap>
 
+
 </mapper>

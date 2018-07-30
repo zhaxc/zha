@@ -1,5 +1,7 @@
 package com.zw.mongo;
 
+import org.springframework.data.mongodb.repository.Query;
+
 import java.util.List;
 import java.util.Map;
 
@@ -12,18 +14,51 @@ import java.util.Map;
  */
 public interface MongoBase<T> {
 
-    //添加
-    public void insert(T object,String collectionName);
-    //根据条件查找
-    public T findOne(Map<String,Object> params,String collectionName,Class<T> clazz);
-    //查找所有
-    public List<T> findAll(Map<String,Object> params,String collectionName);
+
+    /**
+     * 添加
+     * @param object
+     */
+    void insert(T object);
+
+    /**
+     * 保存（主键相同则更新）
+     * @param object
+     */
+    void save(T object);
+
+    /**
+     * 根据条件查找
+     * @return
+     */
+     List<T> find(Query query);
+
+    /**
+     * 根据条件查一个
+     * @param params
+     * @return
+     */
+    T findOne(Map<String,Object> params);
+
+    /**
+     * 根据条件查询
+     * @param t
+     * @return
+     */
+    public List<T> findByCondition(T t);
+
+
+    /**
+     * 查所有
+     * @return
+     */
+    List<T> findAll();
     //修改
-    public void update(Map<String,Object> params,String collectionName);
+    void update(Map<String,Object> params,String collectionName);
     //创建集合
-    public void createCollection(String collectionName);
+    void createCollection(String collectionName);
     //根据条件删除
-    public void remove(Map<String,Object> params,String collectionName);
+    void remove(Map<String,Object> params,String collectionName);
 
 
 }

@@ -1,7 +1,6 @@
 package com.zw.mongo;
 
 import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import org.junit.Test;
@@ -24,8 +23,8 @@ public class TestMongodb {
     public void testConnect() {
         try {
 //            Mongo mongo = new Mongo("192.168.126.49", 20000);
-            Mongo mongo = new MongoClient("192.168.126.49", 20000);
-            DB db = mongo.getDB("test");
+            Mongo mongo = new MongoClient("192.168.1.29", 27017);
+            DB db = mongo.getDB("nrvsp");
             Set<String> collectionNames = db.getCollectionNames();
             for (String collectionName : collectionNames) {
                 System.out.println("collectionName = " + collectionName);

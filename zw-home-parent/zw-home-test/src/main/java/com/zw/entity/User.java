@@ -1,5 +1,8 @@
 package com.zw.entity;
 
+import com.zw.enums.QueryField;
+import com.zw.enums.QueryType;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
@@ -16,25 +19,31 @@ import java.io.Serializable;
 @Document
 public class User implements Serializable{
 
-    private Integer id;
+    @Id
+    @QueryField
+    private String userId;
+
+    @QueryField
     private String name;
+
+    @QueryField(type = QueryType.LIKE, attribute = "phone")
     private String phone;
 
     public User() {
     }
 
-    public User(Integer id, String name, String phone) {
-        this.id = id;
+    public User(String userId, String name, String phone) {
+        this.userId = userId;
         this.name = name;
         this.phone = phone;
     }
 
-    public Integer getId() {
-        return id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
