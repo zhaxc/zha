@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.mapper.OperatePayMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.zw.entity.OperatePay">
+		<id column="id" property="id" />
+		<result column="company_id" property="companyId" />
+		<result column="order_id" property="orderId" />
+		<result column="on_area" property="onArea" />
+		<result column="driver_name" property="driverName" />
+		<result column="license_id" property="licenseId" />
+		<result column="fare_type" property="fareType" />
+		<result column="vehicle_no" property="vehicleNo" />
+		<result column="book_dep_time" property="bookDepTime" />
+		<result column="wait_time" property="waitTime" />
+		<result column="dep_longitude" property="depLongitude" />
+		<result column="dep_latitude" property="depLatitude" />
+		<result column="dep_area" property="depArea" />
+		<result column="dep_time" property="depTime" />
+		<result column="dest_longitude" property="destLongitude" />
+		<result column="dest_latitude" property="destLatitude" />
+		<result column="dest_area" property="destArea" />
+		<result column="dest_time" property="destTime" />
+		<result column="book_model" property="bookModel" />
+		<result column="model" property="model" />
+		<result column="drive_mile" property="driveMile" />
+		<result column="drive_time" property="driveTime" />
+		<result column="wait_mile" property="waitMile" />
+		<result column="fact_price" property="factPrice" />
+		<result column="price" property="price" />
+		<result column="cash_price" property="cashPrice" />
+		<result column="line_name" property="lineName" />
+		<result column="line_price" property="linePrice" />
+		<result column="pos_name" property="posName" />
+		<result column="pos_price" property="posPrice" />
+		<result column="benfit_price" property="benfitPrice" />
+		<result column="book_tip" property="bookTip" />
+		<result column="passenger_tip" property="passengerTip" />
+		<result column="peak_up_price" property="peakUpPrice" />
+		<result column="night_up_price" property="nightUpPrice" />
+		<result column="far_up_price" property="farUpPrice" />
+		<result column="other_up_price" property="otherUpPrice" />
+		<result column="pay_state" property="payState" />
+		<result column="pay_time" property="payTime" />
+		<result column="order_match_time" property="orderMatchTime" />
+		<result column="invoice_status" property="invoiceStatus" />
+		<result column="reserved" property="reserved" />
+	</resultMap>
+
+    <insert id="batchInsert">
+        insert into operate_pay (id, company_id, order_id,
+          on_area, driver_name, license_id,
+          fare_type, vehicle_no, book_dep_time,
+          wait_time, dep_longitude, dep_latitude,
+          dep_area, dep_time, dest_longitude,
+          dest_latitude, dest_area, dest_time,
+          book_model, model, drive_mile,
+          drive_time, wait_mile, fact_price,
+          price, cash_price, line_name,
+          line_price, pos_name, pos_price,
+          benfit_price, book_tip, passenger_tip,
+          peak_up_price, night_up_price, far_up_price,
+          other_up_price, pay_state, pay_time,
+          order_match_time, invoice_status, reserved
+          )
+        values
+        <foreach collection="records" item="item" index="index" separator="," >
+            (#{item.id,jdbcType=BIGINT}, #{item.companyId,jdbcType=VARCHAR}, #{item.orderId,jdbcType=VARCHAR},
+            #{item.onArea,jdbcType=INTEGER}, #{item.driverName,jdbcType=VARCHAR}, #{item.licenseId,jdbcType=VARCHAR},
+            #{item.fareType,jdbcType=VARCHAR}, #{item.vehicleNo,jdbcType=VARCHAR}, #{item.bookDepTime,jdbcType=BIGINT},
+            #{item.waitTime,jdbcType=INTEGER}, #{item.depLongitude,jdbcType=BIGINT}, #{item.depLatitude,jdbcType=BIGINT},
+            #{item.depArea,jdbcType=VARCHAR}, #{item.depTime,jdbcType=BIGINT}, #{item.destLongitude,jdbcType=BIGINT},
+            #{item.destLatitude,jdbcType=BIGINT}, #{item.destArea,jdbcType=VARCHAR}, #{item.destTime,jdbcType=BIGINT},
+            #{item.bookModel,jdbcType=VARCHAR}, #{item.model,jdbcType=VARCHAR}, #{item.driveMile,jdbcType=REAL},
+            #{item.driveTime,jdbcType=INTEGER}, #{item.waitMile,jdbcType=REAL}, #{item.factPrice,jdbcType=REAL},
+            #{item.price,jdbcType=REAL}, #{item.cashPrice,jdbcType=REAL}, #{item.lineName,jdbcType=VARCHAR},
+            #{item.linePrice,jdbcType=REAL}, #{item.posName,jdbcType=VARCHAR}, #{item.posPrice,jdbcType=REAL},
+            #{item.benfitPrice,jdbcType=REAL}, #{item.bookTip,jdbcType=REAL}, #{item.passengerTip,jdbcType=REAL},
+            #{item.peakUpPrice,jdbcType=REAL}, #{item.nightUpPrice,jdbcType=REAL}, #{item.farUpPrice,jdbcType=REAL},
+            #{item.otherUpPrice,jdbcType=REAL}, #{item.payState,jdbcType=VARCHAR}, #{item.payTime,jdbcType=BIGINT},
+            #{item.orderMatchTime,jdbcType=BIGINT}, #{item.invoiceStatus,jdbcType=VARCHAR}, #{item.reserved,jdbcType=VARCHAR}
+            )
+        </foreach>
+
+    </insert>
+
+</mapper>

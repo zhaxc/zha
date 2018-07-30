@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.mapper.OrderCreateMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.zw.entity.OrderCreate">
+		<id column="id" property="id" />
+		<result column="company_id" property="companyId" />
+		<result column="address" property="address" />
+		<result column="order_id" property="orderId" />
+		<result column="depart_time" property="departTime" />
+		<result column="order_time" property="orderTime" />
+		<result column="passenger_note" property="passengerNote" />
+		<result column="departure" property="departure" />
+		<result column="dep_longitude" property="depLongitude" />
+		<result column="dep_latitude" property="depLatitude" />
+		<result column="destination" property="destination" />
+		<result column="dest_longitude" property="destLongitude" />
+		<result column="dest_latitude" property="destLatitude" />
+		<result column="encrypt" property="encrypt" />
+		<result column="fare_type" property="fareType" />
+		<result column="reserved" property="reserved" />
+	</resultMap>
+
+</mapper>

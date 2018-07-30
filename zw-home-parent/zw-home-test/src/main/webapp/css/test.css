@@ -1,0 +1,302 @@
+.all-cats, .all-cats-hover, .all-cats .link .popup-icon, .all-cats-hover .link .popup-icon, .menu-list, .menu-list .link, .menu-list .link .popup-icon, .menu-list .menu, .menu-list .menu .link, .menu-list .menu-selected, .menu-list .menu-hover, .menu-list .menu-selected .link, .menu-list .menu-hover .link, .menu-list .menu-selected .link .popup-icon, .menu-list .menu-hover .link .popup-icon {
+    background: none;
+}
+
+.skin-box-bd .popup-content .cats-tree .fst-cat {
+    list-style: none;
+    float: left;
+    width: 188px;
+    overflow: hidden;
+}
+
+.popup-content .cats-tree .snd-pop-inner, .ks-contentbox, .popup-content, .popup-content .cats-tree, .menu-popup-cats {
+    padding: 0px;
+}
+
+.popup-content .cats-tree, .menu-popup-cats, .ks-contentbox, .all-cats .link {
+    background: none;
+}
+
+.ks-contentbox {
+    padding-top: 0;
+}
+
+.all-cats .link .popup-icon, .all-cats-hover .link .popup-icon {
+    top: 3px;
+}
+
+.menu-list .link .title, .menu-list .menu-selected .link .title, .menu-list .menu {
+    width: auto;
+}
+
+.all-cats-hover .link .popup-icon {
+    transform: rotate(0deg);
+}
+
+.popup-content .cats-tree {
+    margin: 0px;
+}
+
+.skin-box-bd {
+    border: none;
+    background-color: #FAFAFA;
+    height: 30px;
+}
+
+.menu-list .link {
+    border: none;
+    background: none;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu-list .menu .link {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.skin-box-bd .menu-list {
+    background: none;
+}
+
+.menu-list .menu-selected .link .title {
+    background: none;
+    color: #B6B6C4;
+    background-color: #FAFAFA;
+}
+
+.all-cats .all-cats-trigger {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-list .menu-selected {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-list .menu-selected .link {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-list .menu-selected.menu-hover .link {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-list .menu-hover {
+    background: none;
+    background-color: #FAFAFA;
+    height: 30px;
+}
+
+.menu-list .menu-hover .link {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-list .link .popup-icon {
+    margin-top: 8px;
+}
+
+.all-cats .link .popup-icon {
+    margin-top: 8px;
+    background-position: left 0px;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    background-image: url(//gdp.alicdn.com/imgextra/i4/11193727/TB23igbfXXXXXXoXXXXXXXXXXXX-11193727.png);
+}
+
+.all-cats {
+    background: none;
+}
+
+.all-cats-hover .all-cats-trigger {
+    background-image: none;
+    background-color: #FAFAFA;
+}
+
+.all-cats-hover .link {
+    background-image: none;
+    background-color: #FAFAFA;
+}
+
+.all-cats-hover {
+    height: 30px;
+    line-height: 30px;
+}
+
+.all-cats-hover .link .popup-icon {
+    background-position: right 0px;
+    background-image: url(//gdp.alicdn.com/imgextra/i4/11193727/TB23igbfXXXXXXoXXXXXXXXXXXX-11193727.png);
+}
+
+.popup-content .cats-tree .fst-cat-icon {
+    background: none;
+}
+
+.popup-content .cats-tree .fst-cat {
+    background: none;
+    background-color: #FAFAFA;
+    background-image: none;
+}
+
+.menu-popup-cats .sub-cat {
+    background: none;
+    background-color: #FAFAFA;
+    background-image: none;
+    height: 30px;
+    line-height: 30px;
+    border-bottom-width: 0px;
+    border-bottom-color: #ECECEC;
+}
+
+.popup-content .cats-tree .fst-cat-hd:hover {
+    background: none;
+}
+
+.popup-content .cats-tree .cat-hd-hover .fst-cat-name {
+    background: none;
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .cat-hd-hover .fst-cat-hd {
+    background: none;
+}
+
+.cats-tree .fst-cat-hd .fst-cat-icon {
+    margin-top: 13.5px;
+}
+
+.popup-content .cats-tree .snd-pop-inner .snd-cat .snd-cat-icon {
+    background: none;
+}
+
+.popup-content .cats-tree .snd-pop-inner {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.cats-tree .snd-cat-hd .snd-cat-icon {
+    margin-top: 13.5px;
+}
+
+.menu-list .link .title {
+    color: #B6B6C4;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu-list .menu-hover .link .title {
+    color: #B6B6C4;
+}
+
+.menu-list .menu .title {
+    font-size: 12px;
+    font-family: 微软雅黑;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.all-cats .link .title {
+    color: #B6B6C4;
+}
+
+.all-cats-hover .link .title {
+    color: #B6B6C4;
+}
+
+.all-cats .title {
+    font-size: 12px;
+    font-family: 微软雅黑;
+}
+
+.menu-list .menu-selected.menu-hover .link .title {
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .fst-cat-name {
+    color: #B6B6C4;
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu-popup-cats .sub-cat a {
+    color: #B6B6C4;
+}
+
+.menu-popup-cats .sub-cat-hover a {
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .cat-hd-hover {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.menu-popup-cats .sub-cat-hover {
+    background: none;
+    background-color: #FAFAFA;
+}
+
+.skin-box-bd .popup-content .cats-tree .fst-cat {
+    height: 30px;
+    line-height: 30px;
+    border-bottom-width: 0px;
+    border-bottom-color: #ECECEC;
+}
+
+.popup-content .cats-tree .fst-cat-hd {
+    height: 30px;
+    line-height: 30px;
+}
+
+.menu-popup-cats .sub-cat .cat-name {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    font-family: 微软雅黑;
+}
+
+.cats-tree .fst-cat .cat-name {
+    font-size: 12px;
+    font-family: 微软雅黑;
+}
+
+.popup-content .cats-tree .snd-cat-name {
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .snd-pop-inner .snd-cat {
+    background-color: #FAFAFA;
+    background-image: none;
+}
+
+.popup-content .cats-tree a.snd-cat-name:hover {
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .snd-pop-inner .snd-cat-hd-hover a {
+    color: #B6B6C4;
+}
+
+.popup-content .cats-tree .snd-pop-inner .snd-cat-hd-hover {
+    background-color: #FAFAFA;
+}
+
+.snd-pop-inner .fst-cat-bd .snd-cat {
+    height: 30px;
+    line-height: 30px;
+}
+
+.snd-pop-inner .fst-cat-bd .snd-cat-hd {
+    height: 30px;
+    line-height: 30px;
+}
+
+.snd-pop-inner .fst-cat-bd .snd-cat-name {
+    height: 30px;
+    line-height: 30px;
+}
