@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/boot
+#    data-username: root
+#    data-password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    refresh-mapper: true
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    sql-parser-cache: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+#logging
