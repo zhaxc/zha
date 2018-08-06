@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.plugins.pagination.PageHelper;
 import com.zha.entity.User;
 import com.zha.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -150,5 +151,10 @@ public class UserController {
         throw new RuntimeException();
     }
 
+    @Cacheable("user-key")
+    @GetMapping("/getUser")
+    public User getUser(Integer id) {
+        return this.userService.selectById(id);
+    }
 }
 
