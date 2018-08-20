@@ -10,8 +10,9 @@
 		<module>zw-dao</module>
 		<module>zw-activemq-service</module>
 		<module>zw-activemq-client</module>
-    <module>zw-mybatis-plus</module>
-  </modules>
+    	<module>zw-mybatis-plus</module>
+		<module>zw-websocket-demo</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
