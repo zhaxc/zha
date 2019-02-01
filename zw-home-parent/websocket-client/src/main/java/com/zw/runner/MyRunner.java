@@ -20,7 +20,7 @@ import java.util.Date;
 @Component
 public class MyRunner implements CommandLineRunner {
 
-    private static String uri = "ws://localhost:8080/websocket";
+    private static String uri = "ws://localhost:8080/websocket/444";
     private static Session session;
 
     @Override

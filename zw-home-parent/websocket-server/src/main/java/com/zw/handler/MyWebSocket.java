@@ -7,6 +7,7 @@ import javax.websocket.OnError;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
+import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by zha on 2018/8/15.
  */
-@ServerEndpoint(value = "/websocket")
+@ServerEndpoint(value = "/websocket/{userId}")
 @Component
 public class MyWebSocket {
 
@@ -42,7 +43,7 @@ public class MyWebSocket {
 
     //连接
     @OnOpen
-    public void onOpen(Session session) {
+    public void onOpen(Session session,@PathParam("userId")String userId) {
         sessions.set(session);
         addOnlineCount();
         sessionMap.put(session.getId(), session);
