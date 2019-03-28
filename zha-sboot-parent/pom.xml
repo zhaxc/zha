@@ -12,6 +12,11 @@
 	<groupId>com.zw</groupId>
 	<artifactId>zha-sboot-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>sboot-core</module>
+		<module>system-api</module>
+		<module>system-service</module>
+	</modules>
 
 	<name>zha-sboot-parent</name>
 	<!--<url>local</url>-->
@@ -42,22 +47,43 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.21</version>
+			</dependency>
+
+			<!--spring boot dubbo 依赖 -->
+			<dependency>
+				<groupId>com.alibaba.spring.boot</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+
+			<!-- spring boot mybatis plus -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>3.0-RELEASE</version>
+			</dependency>
+
+			<!-- zkclient 连接zookeeper -->
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>0.10</version>
+				<exclusions>
+					<!--与logback 冲突-->
+					<exclusion>
+						<artifactId>slf4j-log4j12</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
-
-	<dependencies>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 
 	<build>
 		<plugins>
