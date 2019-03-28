@@ -16,6 +16,7 @@
 		<module>sboot-core</module>
 		<module>system-api</module>
 		<module>system-service</module>
+		<module>sboot-web</module>
 	</modules>
 
 	<name>zha-sboot-parent</name>
