@@ -6,7 +6,7 @@ import com.zw.system.service.IDemoService;
 /**
  * Created by zha on 2019/3/28.
  */
-@Service
+@Service(version = "${demo.service.version}")
 public class DemoServiceImpl implements IDemoService {
     @Override
     public String sayHello(String name) {
