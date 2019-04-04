@@ -1,10 +1,10 @@
-package com.zw.system.service.impl;
+package com.zw.xt.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.zw.system.entity.User;
-import com.zw.system.mapper.UserMapper;
-import com.zw.system.service.IUserService;
+import com.zw.xt.entity.User;
+import com.zw.xt.mapper.UserMapper;
+import com.zw.xt.service.IUserService;
 
 /**
  * <p>
@@ -12,18 +12,14 @@ import com.zw.system.service.IUserService;
  * </p>
  *
  * @author zha
- * @since 2019-03-28
+ * @since 2019-04-02
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
     @Override
-    public User selectOne() {
-        return null;
+    public String getPackage() {
+        return "com.zw.xt.service.impl.UserServiceImpl";
     }
 
-    @Override
-    public String getPackage() {
-        return "com.zw.system.service.impl.UserServiceImpl";
-    }
 }

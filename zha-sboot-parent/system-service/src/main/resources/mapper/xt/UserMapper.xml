@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zw.system.mapper.UserMapper">
+<mapper namespace="com.zw.xt.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zw.system.entity.User">
+    <resultMap id="BaseResultMap" type="com.zw.xt.entity.User">
         <id column="user_id" property="userId" />
         <result column="d_id" property="dId" />
         <result column="u_gid" property="uGid" />
@@ -28,5 +28,9 @@
         <result column="var_field2" property="varField2" />
         <result column="var_field3" property="varField3" />
     </resultMap>
+
+    <select id="getOne" resultType="com.zw.xt.entity.User">
+
+    </select>
 
 </mapper>

@@ -1,7 +1,7 @@
-package com.zw.system.service;
+package com.zw.xt.service;
 
+import com.zw.xt.entity.User;
 import com.baomidou.mybatisplus.service.IService;
-import com.zw.system.entity.User;
 
 /**
  * <p>
@@ -9,12 +9,8 @@ import com.zw.system.entity.User;
  * </p>
  *
  * @author zha
- * @since 2019-03-28
+ * @since 2019-04-02
  */
 public interface IUserService extends IService<User> {
-
-    User selectOne();
-
     String getPackage();
-
 }

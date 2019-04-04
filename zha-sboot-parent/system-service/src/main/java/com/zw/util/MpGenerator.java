@@ -1,4 +1,4 @@
-package com.zw.system.util;
+package com.zw.util;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
@@ -51,8 +51,8 @@ public class MpGenerator {
         });
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("gjxx1q2w3e");
-        dsc.setUrl("jdbc:mysql://101.37.17.187:8066/saas_dev?useUnicode=true&characterEncoding=UTF-8");
+        dsc.setPassword("root");
+        dsc.setUrl("jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=UTF-8");
         mpg.setDataSource(dsc);
 
         // 策略配置
@@ -88,7 +88,7 @@ public class MpGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.zw");
-         pc.setModuleName("system");
+         pc.setModuleName("xt");
         mpg.setPackageInfo(pc);
 
         // 注入自定义配置，可以在 VM 中使用 cfg.abc 【可无】

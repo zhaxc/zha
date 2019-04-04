@@ -1,6 +1,6 @@
-package com.zw.system.mapper;
+package com.zw.xt.mapper;
 
-import com.zw.system.entity.User;
+import com.zw.xt.entity.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author zha
- * @since 2019-03-29
+ * @since 2019-04-02
  */
 public interface UserMapper extends BaseMapper<User> {
     User getOne();

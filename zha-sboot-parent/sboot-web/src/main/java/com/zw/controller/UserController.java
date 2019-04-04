@@ -26,12 +26,18 @@ public class UserController {
     @Reference
     private IUserService userService;
 
+    @Reference
+    private com.zw.xt.service.IUserService xtUserService;
+
     @ApiOperation(value = "获取用户", notes = "根据id获取用户")
     @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "String")
     @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable("id") String id) {
         try {
+            System.out.println("userService = " + userService.getPackage());
+            System.out.println("xtUserService = " + xtUserService.getPackage());
             return userService.selectById(1);
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;
