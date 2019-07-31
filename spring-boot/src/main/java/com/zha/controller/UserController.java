@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+import java.util.UUID;
+
 /**
  * <p>
  *  前端控制器
@@ -155,6 +158,16 @@ public class UserController {
     @GetMapping("/getUser")
     public User getUser(Integer id) {
         return this.userService.selectById(id);
+    }
+
+    @GetMapping("/uid")
+    String uid(HttpSession session) {
+        UUID uid = (UUID) session.getAttribute("uid");
+        if (uid == null) {
+            uid = UUID.randomUUID();
+        }
+        session.setAttribute("uid", uid);
+        return session.getId();
     }
 }
 

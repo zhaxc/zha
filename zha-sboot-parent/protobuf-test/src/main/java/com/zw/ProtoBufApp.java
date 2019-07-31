@@ -12,18 +12,18 @@ import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
  * @author zha
  */
 @SpringBootApplication
-public class App {
+public class ProtoBufApp {
 
     @Bean
     ProtobufHttpMessageConverter protobufHttpMessageConverter() {
         return new ProtobufHttpMessageConverter();
     }
 
-    private static Logger _logger = LoggerFactory.getLogger(App.class);
+    private static Logger _logger = LoggerFactory.getLogger(ProtoBufApp.class);
 
     public static void main(String[] args) {
-        _logger.info(">>>>>>>>>>>>>> app 开始初始化 >>>>>>>>>>>>>>");
-        SpringApplication.run(App.class, args);
-        _logger.info(">>>>>>>>>>>>>> app 初始化完成 >>>>>>>>>>>>>>");
+        _logger.info(">>>>>>>>>>>>>> ProtoBufApp 开始初始化 >>>>>>>>>>>>>>");
+        SpringApplication.run(ProtoBufApp.class, args);
+        _logger.info(">>>>>>>>>>>>>> ProtoBufApp 初始化完成 >>>>>>>>>>>>>>");
     }
 }

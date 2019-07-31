@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
  */
 @Slf4j
 @SpringBootApplication
-public class App {
+public class ProtoStuffApp {
 
 
     @Bean
@@ -22,9 +22,9 @@ public class App {
 
     public static void main(String[] args) throws JsonProcessingException {
 
-        log.info(">>>>>>>>>>>>>> app 开始初始化 >>>>>>>>>>>>>>");
-        SpringApplication.run(App.class, args);
-        log.info(">>>>>>>>>>>>>> app 初始化完成 >>>>>>>>>>>>>>");
+        log.info(">>>>>>>>>>>>>> ProtoStuffApp 开始初始化 >>>>>>>>>>>>>>");
+        SpringApplication.run(ProtoStuffApp.class, args);
+        log.info(">>>>>>>>>>>>>> ProtoStuffApp 初始化完成 >>>>>>>>>>>>>>");
 
     }
 
