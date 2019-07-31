@@ -17,6 +17,9 @@
 		<module>system-api</module>
 		<module>system-service</module>
 		<module>sboot-web</module>
+		<module>protobuf-demo</module>
+		<module>protostuff-demo</module>
+		<module>protobuf-test</module>
 	</modules>
 
 	<name>zha-sboot-parent</name>
@@ -100,6 +103,14 @@
 				<artifactId>springfox-swagger-ui</artifactId>
 				<version>2.2.2</version>
 			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java -->
+			<dependency>
+				<groupId>com.google.protobuf</groupId>
+				<artifactId>protobuf-java</artifactId>
+				<version>3.9.0</version>
+			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
