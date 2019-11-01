@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zw.xt.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zw.xt.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="d_id" property="dId" />
+        <result column="u_gid" property="uGid" />
+        <result column="name" property="name" />
+        <result column="passwd" property="passwd" />
+        <result column="email" property="email" />
+        <result column="is_active" property="isActive" />
+        <result column="creator" property="creator" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="phone" property="phone" />
+        <result column="adname" property="adname" />
+        <result column="id_card" property="idCard" />
+        <result column="type" property="type" />
+        <result column="organiz" property="organiz" />
+        <result column="organ_type" property="organType" />
+        <result column="activa_user" property="activaUser" />
+        <result column="depart" property="depart" />
+        <result column="is_perfect" property="isPerfect" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="var_field1" property="varField1" />
+        <result column="var_field2" property="varField2" />
+        <result column="var_field3" property="varField3" />
+    </resultMap>
+
+    <select id="getOne" resultType="com.zw.xt.entity.User">
+
+    </select>
+
+</mapper>

@@ -30,7 +30,7 @@ public class AppTest
 
         User user = User.builder().userId(1).userName("渣渣渣").userTypeId(1).build();
 
-        String body = HttpRequest.post("http://localhost:8081/test").accept("application/x-protobuf")
+        String body = HttpRequest.post("http://localhost:8080/facsp/test").accept("application/x-protobuf")
                 .contentType("application/json").send(JSON.toJSONString(user)).body();
 
         User user1 = ProtoBufUtil.deserializer(body.getBytes(), User.class);

@@ -19,13 +19,13 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Tag(1)
+//    @Tag(1)
     private int userId;
 
-    @Tag(2)
+//    @Tag(2)
     private int userTypeId;
 
-    @Tag(3)
+//    @Tag(3)
     private String userName;
 
 //    @Tag(4)

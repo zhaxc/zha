@@ -1,0 +1,8 @@
+com\zw\entity\Person.class
+com\zw\util\ProtostuffHttpMessageConverter.class
+com\zw\entity\Person$PersonBuilder.class
+com\zw\TestController.class
+com\zw\ProtoStuffApp.class
+com\zw\entity\User$UserBuilder.class
+com\zw\entity\User.class
+com\zw\util\ProtoBufUtil.class

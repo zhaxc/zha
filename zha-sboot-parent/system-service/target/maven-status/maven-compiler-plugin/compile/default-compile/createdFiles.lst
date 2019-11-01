@@ -1,0 +1,15 @@
+com\zw\anotation\MyDubboComponentScan.class
+com\zw\xt\mapper\UserMapper.class
+com\zw\config\MybatisPlusConfig.class
+com\zw\SystemServiceApplication.class
+com\zw\config\DubboConfig.class
+com\zw\config\MybatisPlusConfig$1.class
+com\zw\util\MpGenerator.class
+com\zw\util\MpGenerator$1.class
+com\zw\xt\service\impl\UserServiceImpl.class
+com\zw\system\mapper\UserMapper.class
+com\zw\anotation\MyEnableDubbo.class
+com\zw\dubbo\MyDubboComponentScanRegistrar.class
+com\zw\system\service\impl\UserServiceImpl.class
+com\zw\system\service\impl\DemoServiceImpl.class
+com\zw\dubbo\MyServiceAnnotationBeanPostProcessor.class
