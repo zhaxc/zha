@@ -32,7 +32,7 @@
 		<jersey.version>1.18.3</jersey.version>
 		<redis.client.version>2.7.3</redis.client.version>
 		<mongodb.version>2.14.3</mongodb.version>
-		<spring.mongodb.version>1.10.1.RELEASE</spring.mongodb.version>
+		<spring.mongodb.version>3.3.5</spring.mongodb.version>
 		<spring.data.version>1.7.1.RELEASE</spring.data.version>
 		<dubbo.version>2.5.3</dubbo.version>
 		<zkclient.version>0.1</zkclient.version>
